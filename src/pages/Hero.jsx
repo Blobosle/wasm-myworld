@@ -11,6 +11,13 @@ const screenshots = import.meta.glob("/src/assets/screenshots/*", {
   as: "url",
 });
 
+const screenshotMap = Object.fromEntries(
+  Object.entries(screenshots).map(([path, url]) => {
+    const fileName = path.split("/").pop();
+    return [fileName, url];
+  })
+);
+
 const screenshotsKey = JSON.stringify(Object.keys(screenshots));
 
 export default function Hero() {
@@ -46,8 +53,11 @@ export default function Hero() {
         setVersion((v) => v + 1);
     };
 
-    const primaryFile = get_primary ? ("/src/assets/screenshots/" + get_primary()) : null;
-    const secondaryFile = get_secondary ? ("/src/assets/screenshots/" + get_secondary()) : null;
+    const primaryName = get_primary ? get_primary() : null;
+    const secondaryName = get_secondary ? get_secondary() : null;
+
+    const primaryFile = primaryName ? screenshotMap[primaryName] : null;
+    const secondaryFile = secondaryName ? screenshotMap[secondaryName] : null;
 
     return (
         <div className="bg-cover bg-center bg-no-repeat h-screen w-full"
