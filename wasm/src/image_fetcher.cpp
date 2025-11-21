@@ -66,12 +66,7 @@ void go_prev() {
     cur_top++;
 }
 
-int calc(int x, int y) {
-    return x + y;
-}
-
 EMSCRIPTEN_BINDINGS(my_module) {
-    function("calc", calc);
     function("init", init);
     function("go_prev", go_prev);
     function("go_next", go_next);

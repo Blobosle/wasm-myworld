@@ -3,13 +3,17 @@ import { useState, useEffect } from "react"
 import BgImg from "@assets/bgimgq.webp"
 import MinecraftLogo from "@assets/minecraftlogo.webp"
 import MyWorld from "@assets/myworld.webp"
-import FirstImg from "@assets/img1.webp"
-import SecondImg from "@assets/img2.webp"
 
 import WebAsm from "@/wasm/image_fetcher.js"
 
+const screenshots = import.meta.glob("/src/assets/screenshots/*", {
+  eager: true,
+  as: "url",
+});
+
+const screenshotsKey = JSON.stringify(Object.keys(screenshots));
+
 export default function Hero() {
-    const [calc, setCalc] = useState(null);
     const [go_prev, setPrev] = useState(null);
     const [go_next, setNext] = useState(null);
     const [get_primary, setPrimary] = useState(null);
@@ -23,13 +27,12 @@ export default function Hero() {
                 Module.init("/screenshots");
             }
 
-            setCalc(() => Module.calc);
             setPrev(() => Module.go_prev);
             setNext(() => Module.go_next);
             setPrimary(() => Module.get_primary);
             setSecondary(() => Module.get_secondary);
-        })
-    }, []);
+    })
+    }, [screenshotsKey]);
 
     const handlePrev = () => {
         if (!go_prev) return;
@@ -60,14 +63,14 @@ export default function Hero() {
                     <a href={primaryFile} target="blank">
                         <img src={primaryFile} className="h-130 border-4 border-white" />
                     </a>
-                    <p className="pt-4 font-mc text-white text-[20px] leading-none">Calc out: {calc ? calc(1, 3) : "loading"}</p>
+                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{get_primary ? get_primary() : null}</p>
                 </div>
 
                 <div className="flex flex-col">
                     <a href={secondaryFile} target="blank">
                         <img src={secondaryFile} className="h-70 border-4 border-white" />
                     </a>
-                    <p className="pt-4 font-mc text-white text-[20px] leading-none">This is something</p>
+                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{get_secondary ? get_secondary() : null}</p>
                 </div>
             </div>
 
