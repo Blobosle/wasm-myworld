@@ -71,16 +71,16 @@ export default function Hero() {
             <div className="pt-2 flex justify-center items-center gap-10">
                 <div className="flex flex-col">
                     <a href={primaryFile} target="blank">
-                        <img src={primaryFile} className="h-130 border-4 border-white" />
+                        <img src={primaryFile} className="h-130 border-4 border-white" loading="lazy"/>
                     </a>
-                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{get_primary ? get_primary() : null}</p>
+                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{primaryName}</p>
                 </div>
 
                 <div className="flex flex-col">
                     <a href={secondaryFile} target="blank">
-                        <img src={secondaryFile} className="h-70 border-4 border-white" />
+                        <img src={secondaryFile} className="h-70 border-4 border-white" loading="lazy"/>
                     </a>
-                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{get_secondary ? get_secondary() : null}</p>
+                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{secondaryName}</p>
                 </div>
             </div>
 
