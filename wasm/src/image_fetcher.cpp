@@ -11,33 +11,21 @@ using namespace emscripten;
 std::vector<std::string> g_filenames;
 size_t cur_top;
 
-std::string deb(std::string path) {
-    return path;
-}
-
-void init(std::string path) {
+void init(val jsArray) {
     g_filenames.clear();
 
-    DIR* dir = opendir(path.c_str());
-    if (!dir) {
-        perror("dir");
-        exit(0);
+    unsigned len = jsArray["length"].as<unsigned>();
+    g_filenames.reserve(len);
+
+    for (unsigned i = 0; i < len; ++i) {
+        g_filenames.emplace_back(jsArray[i].as<std::string>());
     }
 
-    struct dirent* entry = nullptr;
-
-    while ((entry = readdir(dir)) != nullptr) {
-        if ((std::string(entry->d_name) == ".") ||
-            (std::string(entry->d_name) == "..")) {
-            continue;
-        }
-
-        g_filenames.emplace_back(entry->d_name);
+    if (!g_filenames.empty()) {
+        cur_top = g_filenames.size() - 1;
+    } else {
+        cur_top = 0;
     }
-
-    closedir(dir);
-
-    cur_top = g_filenames.size() - 1;
 }
 
 std::string get_primary() {
@@ -72,5 +60,4 @@ EMSCRIPTEN_BINDINGS(my_module) {
     function("go_next", go_next);
     function("get_primary", &get_primary);
     function("get_secondary", &get_secondary);
-    function("deb", deb);
 }

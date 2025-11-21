@@ -18,7 +18,7 @@ const screenshotMap = Object.fromEntries(
   })
 );
 
-const screenshotsKey = JSON.stringify(Object.keys(screenshots));
+const filenames = Object.keys(screenshotMap);
 
 export default function Hero() {
     const [go_prev, setPrev] = useState(null);
@@ -26,12 +26,12 @@ export default function Hero() {
     const [get_primary, setPrimary] = useState(null);
     const [get_secondary, setSecondary] = useState(null);
 
-    const [version, setVersion] = useState(0);
+    const [, setVersion] = useState(0);
 
     useEffect(() => {
         WebAsm({locateFile: (path) => `/${path}`,}).then((Module) => {
             if (Module.init) {
-                Module.init("/screenshots");
+                Module.init(filenames);
             }
 
             setPrev(() => Module.go_prev);
@@ -39,7 +39,7 @@ export default function Hero() {
             setPrimary(() => Module.get_primary);
             setSecondary(() => Module.get_secondary);
     })
-    }, [screenshotsKey]);
+    }, []);
 
     const handlePrev = () => {
         if (!go_prev) return;
