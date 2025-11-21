@@ -1,11 +1,22 @@
-import BgImg from "../assets/bgimgq.webp"
-import MinecraftLogo from "../assets/minecraftlogo.webp"
-import MyWorld from "../assets/myworld.webp"
+import { useState, useEffect } from "react"
 
-import FirstImg from "../assets/img1.webp"
-import SecondImg from "../assets/img2.webp"
+import BgImg from "@assets/bgimgq.webp"
+import MinecraftLogo from "@assets/minecraftlogo.webp"
+import MyWorld from "@assets/myworld.webp"
+import FirstImg from "@assets/img1.webp"
+import SecondImg from "@assets/img2.webp"
+
+import WebAsm from "@/wasm/image_fetcher.js"
 
 export default function Hero() {
+    const [calc, setCalc] = useState(null);
+
+    useEffect(() => {
+        WebAsm().then((Module) => {
+            setCalc(() => Module.calc);
+        })
+    }, []);
+
     return (
         <div className="bg-cover bg-center bg-no-repeat h-screen w-full"
             style={{ backgroundImage: `url(${BgImg})` }}
@@ -18,7 +29,7 @@ export default function Hero() {
             <div className="pt-2 flex justify-center items-center gap-10">
                 <div className="flex flex-col">
                     <img src={FirstImg} className="h-130 border-4 border-white" />
-                    <p className="pt-4 font-mc text-white text-[20px] leading-none">This is something</p>
+                    <p className="pt-4 font-mc text-white text-[20px] leading-none">Calc out: {calc ? calc(1, 3) : "loading"}</p>
                 </div>
 
                 <div className="flex flex-col">

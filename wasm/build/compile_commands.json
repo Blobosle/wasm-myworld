@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/benjaminlobos/Development/Web dev/my-world/wasm/build",
+  "command": "/opt/homebrew/Cellar/emscripten/4.0.19/libexec/em++  @CMakeFiles/image_fetcher.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o -c \"/Users/benjaminlobos/Development/Web dev/my-world/wasm/src/image_fetcher.cpp\"",
+  "file": "/Users/benjaminlobos/Development/Web dev/my-world/wasm/src/image_fetcher.cpp",
+  "output": "CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o"
+}
+]

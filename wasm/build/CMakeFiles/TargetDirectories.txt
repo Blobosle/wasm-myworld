@@ -1,0 +1,3 @@
+/Users/benjaminlobos/Development/Web dev/my-world/wasm/build/CMakeFiles/image_fetcher.dir
+/Users/benjaminlobos/Development/Web dev/my-world/wasm/build/CMakeFiles/edit_cache.dir
+/Users/benjaminlobos/Development/Web dev/my-world/wasm/build/CMakeFiles/rebuild_cache.dir
