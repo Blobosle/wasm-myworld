@@ -29,7 +29,7 @@ export default function Hero() {
     const [version, setVersion] = useState(0);
 
     useEffect(() => {
-        WebAsm().then((Module) => {
+        WebAsm({locateFile: (path) => `/${path}`,}).then((Module) => {
             if (Module.init) {
                 Module.init("/screenshots");
             }
