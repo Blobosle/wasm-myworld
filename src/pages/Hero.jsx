@@ -43,8 +43,8 @@ export default function Hero() {
         setVersion((v) => v + 1);
     };
 
-    const primaryFile = get_primary ? get_primary() : null;
-    const secondaryFile = get_secondary ? get_secondary() : null;
+    const primaryFile = get_primary ? ("/src/assets/screenshots/" + get_primary()) : null;
+    const secondaryFile = get_secondary ? ("/src/assets/screenshots/" + get_secondary()) : null;
 
     return (
         <div className="bg-cover bg-center bg-no-repeat h-screen w-full"
@@ -57,12 +57,16 @@ export default function Hero() {
 
             <div className="pt-2 flex justify-center items-center gap-10">
                 <div className="flex flex-col">
-                    <img src={"/src/assets/screenshots/" + primaryFile} className="h-130 border-4 border-white" />
+                    <a href={primaryFile} target="blank">
+                        <img src={primaryFile} className="h-130 border-4 border-white" />
+                    </a>
                     <p className="pt-4 font-mc text-white text-[20px] leading-none">Calc out: {calc ? calc(1, 3) : "loading"}</p>
                 </div>
 
                 <div className="flex flex-col">
-                    <img src={"/src/assets/screenshots/" + secondaryFile} className="h-70 border-4 border-white" />
+                    <a href={secondaryFile} target="blank">
+                        <img src={secondaryFile} className="h-70 border-4 border-white" />
+                    </a>
                     <p className="pt-4 font-mc text-white text-[20px] leading-none">This is something</p>
                 </div>
             </div>
