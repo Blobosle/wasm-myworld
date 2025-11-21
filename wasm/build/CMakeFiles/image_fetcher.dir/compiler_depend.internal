@@ -6,8 +6,10 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/alloca.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/assert.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/alltypes.h
+ /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/dirent.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/errno.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/limits.h
+ /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/posix.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/stdint.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/adjacent_find.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/all_of.h
@@ -599,6 +601,7 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/compat/time.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/compat/xlocale.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/ctype.h
+ /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/dirent.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/errno.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/features.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/limits.h
@@ -614,6 +617,7 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/string.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/strings.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/time.h
+ /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/unistd.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/wchar.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/wctype.h
  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/__stdarg___gnuc_va_list.h

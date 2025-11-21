@@ -10,12 +10,41 @@ import WebAsm from "@/wasm/image_fetcher.js"
 
 export default function Hero() {
     const [calc, setCalc] = useState(null);
+    const [go_prev, setPrev] = useState(null);
+    const [go_next, setNext] = useState(null);
+    const [get_primary, setPrimary] = useState(null);
+    const [get_secondary, setSecondary] = useState(null);
+
+    const [version, setVersion] = useState(0);
 
     useEffect(() => {
         WebAsm().then((Module) => {
+            if (Module.init) {
+                Module.init("/screenshots");
+            }
+
             setCalc(() => Module.calc);
+            setPrev(() => Module.go_prev);
+            setNext(() => Module.go_next);
+            setPrimary(() => Module.get_primary);
+            setSecondary(() => Module.get_secondary);
         })
     }, []);
+
+    const handlePrev = () => {
+        if (!go_prev) return;
+        go_prev();
+        setVersion((v) => v + 1);
+    };
+
+    const handleNext = () => {
+        if (!go_next) return;
+        go_next();
+        setVersion((v) => v + 1);
+    };
+
+    const primaryFile = get_primary ? get_primary() : null;
+    const secondaryFile = get_secondary ? get_secondary() : null;
 
     return (
         <div className="bg-cover bg-center bg-no-repeat h-screen w-full"
@@ -28,19 +57,21 @@ export default function Hero() {
 
             <div className="pt-2 flex justify-center items-center gap-10">
                 <div className="flex flex-col">
-                    <img src={FirstImg} className="h-130 border-4 border-white" />
+                    <img src={"/src/assets/screenshots/" + primaryFile} className="h-130 border-4 border-white" />
                     <p className="pt-4 font-mc text-white text-[20px] leading-none">Calc out: {calc ? calc(1, 3) : "loading"}</p>
                 </div>
 
                 <div className="flex flex-col">
-                    <img src={SecondImg} className="h-70 border-4 border-white" />
+                    <img src={"/src/assets/screenshots/" + secondaryFile} className="h-70 border-4 border-white" />
                     <p className="pt-4 font-mc text-white text-[20px] leading-none">This is something</p>
                 </div>
             </div>
 
-            <div className="flex gap-5 justify-center pt-7 leading-none">
-                <a className="font-mc text-white text-[15px] hover:underline hover:text-blue-200 cursor-pointer">&lt;prev&gt;</a>
-                <a className="font-mc text-white text-[15px] hover:underline hover:text-blue-200 cursor-pointer">&lt;next&gt;</a>
+            <div className="flex gap-5 justify-center pt-7 leading-none select-none">
+                <a  onClick={handlePrev}
+                    className="font-mc text-white text-[15px] hover:underline hover:text-blue-200 cursor-pointer">&lt;prev&gt;</a>
+                <a  onClick={handleNext}
+                    className="font-mc text-white text-[15px] hover:underline hover:text-blue-200 cursor-pointer">&lt;next&gt;</a>
             </div>
         </div>
     );

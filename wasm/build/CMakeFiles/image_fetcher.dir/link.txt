@@ -1,1 +1,1 @@
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/em++ -lembind -sEXPORT_ES6=1 @CMakeFiles/image_fetcher.dir/objects1.rsp -o "/Users/benjaminlobos/Development/Web dev/my-world/src/wasm/image_fetcher.js"
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/em++ -lembind -sEXPORT_ES6=1 --preload-file ../../src/assets/screenshots@/screenshots "-sEXPORTED_RUNTIME_METHODS=['FS']" @CMakeFiles/image_fetcher.dir/objects1.rsp -o "/Users/benjaminlobos/Development/Web dev/my-world/src/wasm/image_fetcher.js"

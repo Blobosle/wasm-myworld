@@ -5,8 +5,10 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/alloca.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/assert.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/alltypes.h \
+  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/dirent.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/errno.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/limits.h \
+  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/posix.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/stdint.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/adjacent_find.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/all_of.h \
@@ -598,6 +600,7 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/compat/time.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/compat/xlocale.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/ctype.h \
+  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/dirent.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/errno.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/features.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/limits.h \
@@ -613,6 +616,7 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/string.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/strings.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/time.h \
+  /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/unistd.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/wchar.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/wctype.h \
   /opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/__stdarg___gnuc_va_list.h \
@@ -644,8 +648,6 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/system/include/emscripten/wire.h:
 
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/system/include/emscripten/val.h:
-
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/stdint.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/stddef.h:
@@ -661,6 +663,8 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/__stdarg_header_macro.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/wctype.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/unistd.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/time.h:
 
@@ -928,6 +932,8 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/conditional.h:
 
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/common_type.h:
+
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/boyer_moore_searcher.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__iterator/static_bounded_iter.h:
@@ -965,8 +971,6 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__thread/id.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__system_error/throw_system_error.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__system_error/error_condition.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__concepts/arithmetic.h:
 
@@ -1322,7 +1326,17 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/binder2nd.h:
 
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/conjunction.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__memory/addressof.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/bind.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/binary_negate.h:
+
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/ranges_operations.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/posix.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__exception/operations.h:
 
@@ -1333,12 +1347,6 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__exception/exception_ptr.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/hash.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/conjunction.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__memory/addressof.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/bind.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__vector/pmr.h:
 
@@ -1528,8 +1536,6 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/unique.h:
 
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/binary_negate.h:
-
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/climits:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/prev_permutation.h:
@@ -1566,6 +1572,18 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/set_union.h:
 
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/nat.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/is_trivially_destructible.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/comp.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__compare/common_comparison_category.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/set_symmetric_difference.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/set_intersection.h:
+
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/ios:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/partition_copy.h:
@@ -1590,6 +1608,12 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__memory/uninitialized_algorithms.h:
 
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__system_error/error_condition.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/system/include/emscripten/val.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/dirent.h:
+
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/__stddef_ptrdiff_t.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/search_n.h:
@@ -1597,8 +1621,6 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/merge.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/pstl.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/common_type.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/is_pod.h:
 
@@ -1796,16 +1818,6 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/half_positive.h:
 
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/nat.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/is_trivially_destructible.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/comp.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__compare/common_comparison_category.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/set_symmetric_difference.h:
-
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/clamp.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/is_partitioned.h:
@@ -1827,8 +1839,6 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__concepts/same_as.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/swap_ranges.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/set_intersection.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/disjunction.h:
 
@@ -1854,11 +1864,11 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/binder1st.h:
 
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/iterator_operations.h:
-
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/alloca.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/copy_move_common.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/iterator_operations.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/stdio.h:
 
@@ -1867,6 +1877,18 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__functional/identity.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/equal_range.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__cstddef/max_align_t.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/dirent.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/is_integral.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__compare/three_way_comparable.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/__stdarg___va_copy.h:
+
+/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/for_each.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__concepts/convertible_to.h:
 
@@ -1901,15 +1923,5 @@ CMakeFiles/image_fetcher.dir/src/image_fetcher.cpp.o: /Users/benjaminlobos/Devel
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/assert.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/binary_search.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__cstddef/max_align_t.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__type_traits/is_integral.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__compare/three_way_comparable.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/llvm/lib/clang/22/include/__stdarg___va_copy.h:
-
-/opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/c++/v1/__algorithm/for_each.h:
 
 /opt/homebrew/Cellar/emscripten/4.0.19/libexec/cache/sysroot/include/bits/alltypes.h:
