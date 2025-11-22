@@ -20,6 +20,32 @@ const screenshotMap = Object.fromEntries(
 
 const filenames = Object.keys(screenshotMap);
 
+const formatName = (name) => {
+    if (!name) return "";
+
+    const datePart = name.split("_")[0];
+    const [year, month, dayStr] = datePart.split("-");
+    const day = Number(dayStr);
+
+    const monthNames = [
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
+    ];
+
+    const getSuffix = (n) => {
+        if (n >= 11 && n <= 13) return "th";
+        const last = n % 10;
+        if (last === 1) return "st";
+        if (last === 2) return "nd";
+        if (last === 3) return "rd";
+        return "th";
+    };
+
+    const suffix = getSuffix(day);
+    return `${monthNames[Number(month) - 1]} ${day}${suffix}, ${year}`;
+};
+
+
 export default function Hero() {
     const [go_prev, setPrev] = useState(null);
     const [go_next, setNext] = useState(null);
@@ -73,14 +99,14 @@ export default function Hero() {
                     <a href={primaryFile} target="blank">
                         <img src={primaryFile} className="h-20 sm:h-40 md:h-80 lg:h-100 xl:h-130 border-4 border-white" loading="lazy"/>
                     </a>
-                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{primaryName}</p>
+                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{formatName(primaryName)}</p>
                 </div>
 
                 <div className="flex flex-col flex-shrink-0">
                     <a href={secondaryFile} target="blank">
                         <img src={secondaryFile} className="h-20 sm:h-40 md:h-60 lg:h-70 border-4 border-white" loading="lazy"/>
                     </a>
-                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{secondaryName}</p>
+                    <p className="pt-4 font-mc text-white text-[20px] leading-none">{formatName(secondaryName)}</p>
                 </div>
             </div>
 
