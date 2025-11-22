@@ -7,15 +7,15 @@ import MyWorld from "@assets/myworld.webp"
 import WebAsm from "@/wasm/image_fetcher.js"
 
 const screenshots = import.meta.glob("/src/assets/screenshots/*", {
-  eager: true,
-  as: "url",
+    eager: true,
+    as: "url",
 });
 
 const screenshotMap = Object.fromEntries(
-  Object.entries(screenshots).map(([path, url]) => {
-    const fileName = path.split("/").pop();
-    return [fileName, url];
-  })
+    Object.entries(screenshots).map(([path, url]) => {
+        const fileName = path.split("/").pop();
+        return [fileName, url];
+    })
 );
 
 const filenames = Object.keys(screenshotMap);
@@ -68,17 +68,17 @@ export default function Hero() {
                 <img src={MyWorld} className="-mt-25 h-22 w-auto"/>
             </div>
 
-            <div className="pt-2 flex justify-center items-center gap-10">
+            <div className="pt-2 flex flex-col md:flex-row justify-center items-center gap-10">
                 <div className="flex flex-col flex-shrink-0">
                     <a href={primaryFile} target="blank">
-                        <img src={primaryFile} className="h-130 border-4 border-white" loading="lazy"/>
+                        <img src={primaryFile} className="h-20 sm:h-40 md:h-80 lg:h-100 xl:h-130 border-4 border-white" loading="lazy"/>
                     </a>
                     <p className="pt-4 font-mc text-white text-[20px] leading-none">{primaryName}</p>
                 </div>
 
                 <div className="flex flex-col flex-shrink-0">
                     <a href={secondaryFile} target="blank">
-                        <img src={secondaryFile} className="h-70 border-4 border-white" loading="lazy"/>
+                        <img src={secondaryFile} className="h-20 sm:h-40 md:h-60 lg:h-70 border-4 border-white" loading="lazy"/>
                     </a>
                     <p className="pt-4 font-mc text-white text-[20px] leading-none">{secondaryName}</p>
                 </div>
