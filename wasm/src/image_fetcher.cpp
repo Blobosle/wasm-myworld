@@ -4,12 +4,16 @@
 #include <emscripten/bind.h>
 #include <assert.h>
 
-// #define PATH ("../assets/screenshots")
-
 using namespace emscripten;
 
 std::vector<std::string> g_filenames;
 size_t cur_top;
+
+void init(val);
+std::string get_primary();
+std::string get_secondary();
+void go_next();
+void go_prev();
 
 void init(val jsArray) {
     g_filenames.clear();
@@ -26,6 +30,33 @@ void init(val jsArray) {
     } else {
         cur_top = 0;
     }
+}
+
+val peek_next(std::size_t count) {
+    val result = val::array();
+
+    if (count == 0 || g_filenames.empty()) {
+        return result;
+    }
+
+    size_t saved_top = cur_top;
+
+    std::size_t pushed = 0;
+    while (pushed < count) {
+        size_t before = cur_top;
+        go_next();
+
+        if (cur_top == before) {
+            break;
+        }
+
+        result.set(pushed, g_filenames[cur_top]);
+        ++pushed;
+    }
+
+    cur_top = saved_top;
+
+    return result;
 }
 
 std::string get_primary() {
@@ -58,6 +89,7 @@ EMSCRIPTEN_BINDINGS(my_module) {
     function("init", init);
     function("go_prev", go_prev);
     function("go_next", go_next);
-    function("get_primary", &get_primary);
-    function("get_secondary", &get_secondary);
+    function("get_primary", get_primary);
+    function("get_secondary", get_secondary);
+    function("peek_next", peek_next);
 }

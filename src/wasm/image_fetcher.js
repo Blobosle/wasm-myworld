@@ -2026,6 +2026,8 @@ async function createWasm() {
       return emval_methodCallers[caller](handle, methodName, destructorsRef, args);
     };
 
+  var __emval_new_array = () => Emval.toHandle([]);
+
   
   var __emval_new_cstring = (v) => Emval.toHandle(getStringOrSymbol(v));
 
@@ -2035,6 +2037,13 @@ async function createWasm() {
       var destructors = Emval.toValue(handle);
       runDestructors(destructors);
       __emval_decref(handle);
+    };
+
+  var __emval_set_property = (handle, key, value) => {
+      handle = Emval.toValue(handle);
+      key = Emval.toValue(key);
+      value = Emval.toValue(value);
+      handle[key] = value;
     };
 
   var abortOnCannotGrowMemory = (requestedSize) => {
@@ -5328,9 +5337,13 @@ var wasmImports = {
   /** @export */
   _emval_invoke: __emval_invoke,
   /** @export */
+  _emval_new_array: __emval_new_array,
+  /** @export */
   _emval_new_cstring: __emval_new_cstring,
   /** @export */
   _emval_run_destructors: __emval_run_destructors,
+  /** @export */
+  _emval_set_property: __emval_set_property,
   /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */

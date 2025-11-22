@@ -45,14 +45,13 @@ const formatName = (name) => {
     return `${monthNames[Number(month) - 1]} ${day}${suffix}, ${year}`;
 };
 
-
 export default function Hero() {
     const [go_prev, setPrev] = useState(null);
     const [go_next, setNext] = useState(null);
     const [get_primary, setPrimary] = useState(null);
     const [get_secondary, setSecondary] = useState(null);
-
-    const [, setVersion] = useState(0);
+    const [peek_next, setPeek] = useState(null);
+    const [version, setVersion] = useState(0);
 
     useEffect(() => {
         WebAsm({locateFile: (path) => `/${path}`,}).then((Module) => {
@@ -64,6 +63,7 @@ export default function Hero() {
             setNext(() => Module.go_next);
             setPrimary(() => Module.get_primary);
             setSecondary(() => Module.get_secondary);
+            setPeek(() => Module.peek_next);
     })
     }, []);
 
@@ -78,6 +78,23 @@ export default function Hero() {
         go_next();
         setVersion((v) => v + 1);
     };
+
+    const PRELOAD_COUNT = 3;
+
+    useEffect(() => {
+        if (!peek_next) return;
+
+        const names = peek_next(PRELOAD_COUNT);
+        if (!names) return;
+
+        names.forEach((name) => {
+            const url = screenshotMap[name];
+            if (!url) return;
+
+            const img = new Image();
+            img.src = url;
+        });
+    }, [version, peek_next, screenshotMap]);
 
     const primaryName = get_primary ? get_primary() : null;
     const secondaryName = get_secondary ? get_secondary() : null;
