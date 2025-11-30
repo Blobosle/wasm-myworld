@@ -114,7 +114,7 @@ export default function Hero() {
 
     return (
         <div
-            className="bg-cover bg-center bg-no-repeat min-h-screen w-full"
+            className="bg-cover bg-center bg-no-repeat min-h-screen w-full overflow-hidden"
             style={{
                 backgroundImage: `url(${BgImg})`,
                 backgroundSize: isShort ? "120% auto" : "cover",
@@ -141,7 +141,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="flex gap-5 justify-center pt-7 leading-none select-none">
+            <div className="flex gap-5 justify-center pt-7 leading-none select-none pb-7">
                 <a  onClick={handlePrev}
                     className="font-mc text-white text-[15px] hover:underline hover:text-blue-200 cursor-pointer">&lt;prev&gt;</a>
                 <a  onClick={handleNext}
