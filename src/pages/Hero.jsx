@@ -52,6 +52,16 @@ export default function Hero() {
     const [get_secondary, setSecondary] = useState(null);
     const [peek_next, setPeek] = useState(null);
     const [version, setVersion] = useState(0);
+    const [isShort, setIsShort] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsShort(window.innerHeight < 500);
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         WebAsm({locateFile: (path) => `/${path}`,}).then((Module) => {
@@ -64,7 +74,7 @@ export default function Hero() {
             setPrimary(() => Module.get_primary);
             setSecondary(() => Module.get_secondary);
             setPeek(() => Module.peek_next);
-    })
+        })
     }, []);
 
     const handlePrev = () => {
@@ -103,8 +113,12 @@ export default function Hero() {
     const secondaryFile = secondaryName ? screenshotMap[secondaryName] : null;
 
     return (
-        <div className="bg-cover bg-center bg-no-repeat h-screen w-full"
-            style={{ backgroundImage: `url(${BgImg})` }}
+        <div
+            className="bg-cover bg-center bg-no-repeat min-h-screen w-full"
+            style={{
+                backgroundImage: `url(${BgImg})`,
+                backgroundSize: isShort ? "120% auto" : "cover",
+            }}
         >
             <div className="flex flex-col items-center justify-center select-none">
                 <img src={MinecraftLogo} className="h-60 w-auto"/>
@@ -136,3 +150,4 @@ export default function Hero() {
         </div>
     );
 }
+
